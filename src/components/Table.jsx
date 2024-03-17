@@ -1,3 +1,5 @@
+import satData from "./satData";
+
 const Table = ({ sat }) => {
   return (
     <table>
@@ -9,17 +11,24 @@ const Table = ({ sat }) => {
        <th>Status</th>
      </tr>
      </thead>
-     {/* <tbody>
-    
-     <tr key={sat.id}>
-       <td>{data.name}</td>
-       <td>{data.type}</td>
-       <td>{data.launchDate}</td>
-       <td>{data.orbitType}</td>
-     </tr>
-     </tbody> */}
+     {satData.map((data, id) => {
+      return (
+     <tbody>
+        <tr key={id}>
+          <td>{data.name}</td>
+          <td>{data.type}</td>
+          <td>{data.launchDate}</td>
+          <td>{data.orbitType}</td>
+        </tr>
+      </tbody>
+    );
+  })}
+     
    </table>
   );
 };
 
 export default Table;
+
+
+
